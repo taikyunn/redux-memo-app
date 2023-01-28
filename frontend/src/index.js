@@ -11,9 +11,12 @@ import MemoStore, { memoReducer } from './memo/Store';
 import reportWebVitals from './reportWebVitals';
 
 // rudux-persistの設定
+// ブラックリスト・ホワイトリストを設定
 const persistConfig = {
   key: 'memo',
-  storage
+  storage: storage,
+  blacklist: ['message', 'mode', 'fdata'],
+  whitelist: ['data']
 };
 
 // persisitReducerの作成
